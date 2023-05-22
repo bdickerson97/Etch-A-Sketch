@@ -1,0 +1,36 @@
+body{
+    border: 2px solid lightblue;
+
+    margin: 10px;
+    padding: 10px;
+}
+
+
+
+#content {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+#display {
+  display: grid;
+  gap: 1px; /* Adjust the gap between grid cells as desired */
+  border: 1px solid #000; /* Add border for visualization */
+  width: 500px; /* Adjust the width of the grid container as desired */
+  height: 500px; /* Adjust the height of the grid container as desired */
+}
+
+.grid-item {
+  background-color: lightblue; /* Set the background color of grid items */
+
+}
+
+
+
+
+
+
+
+
+

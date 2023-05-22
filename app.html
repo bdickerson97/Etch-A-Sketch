@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-A-Sketch</title>
+
+    <link rel="stylesheet" href="./app.css">
+</head>
+<body>
+    <div id="webpage-title"><h1>Etch-A-Sketch</h1></div>
+
+    <div id="description">
+        <ul>
+            <li>this says one thing about the app</li>
+            <li>this says one thing about the app</li>
+            <li>this says one thing about the app</li>
+        </ul>
+    </div>
+    <div id="content">
+        <div id="settings">
+            <button id="eraser-toggle" class="setting-button">Eraser</button>
+            <button id="change-color" class="setting-button">Change Color</button>
+            <input type="number" id="grid-size-input" placeholder="Enter grid size">
+            <button id="create-grid-btn">Create Grid</button>
+
+        </div>
+
+        <div id="display">
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+<script>
+    const eraser = document.getElementById("eraser-toggle");
+    const change_color = document.getElementById("change-color");
+    const display = document.getElementById("display");
+    const create_grid_button = document.querySelector(("#create-grid-btn"));
+
+    function createGrid(){
+
+        const grid_size_input = document.querySelecto("#grid-size-input")
+        const grid_size = parseInt(grid_size_input.value)
+
+        if(isNaN(grid_size) || grid_size <= 0){
+            alert("Please enter a valid grid size.")
+            return;
+        }
+
+        clearGrid();
+
+        display.style.gridTemplateColumns = `repeat(${grid_size}, 1fr)`;
+
+        display.style.gridTemplateRows = `repeat(${grid_size}, 1fr)`;
+
+
+         for (let i = 0; i < grid_size * grid_size; i++) {
+            new_grid_item = document.createElement("div")
+            new_grid_item.classList.add("grid-item")
+            display.appendChild(new_grid_item)
+        }
+
+
+    }
+
+    function clearGrid(){
+        display.innerHTML = " "    }
+
+    create_grid_button.addEventListener("click", createGrid)
+
+
+
+
+
+
+</script>
+</html>
